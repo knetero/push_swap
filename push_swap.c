@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:09:00 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/19 20:01:22 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/20 14:18:41 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,10 +128,13 @@ void	swap(t_list *head, char *s)
 	
 	if (head == NULL || (head->next == NULL))
 		return ;
-	tmp = head->data;
-	head->data = head->next->data;
-	head->next->data = tmp;
-	ft_putstr_fd(s, 1);
+	if(head->data > head->next->data)
+	{
+		tmp = head->data;
+		head->data = head->next->data;
+		head->next->data = tmp;
+		ft_putstr_fd(s, 1);
+	}
 }
 
 t_list *creat_list(int *arr, int size)
@@ -144,6 +147,11 @@ t_list *creat_list(int *arr, int size)
 	while(i < size)
 	{
 		new_node = malloc(sizeof(t_list));
+		if(!new_node)
+		{
+			free(new_node);
+			return(0);
+		}
 		new_node->data = arr[i++];
 		new_node->next = NULL;
 		if(head == NULL)
@@ -265,7 +273,11 @@ int main(int ac, char **av)
 		if(size == 1)
 			exit(0);
 		arr = malloc(sizeof(int) * (size));
+		if(!arr)
+			return(free(arr), 0);
 		arr_cpy = malloc(sizeof(int) * (size));
+		if(!arr)
+			return(free(arr), 0);
 		while(s[i])
 		{
 			arr[i] = check_num(s[i]);
@@ -279,6 +291,11 @@ int main(int ac, char **av)
 		}
 		check_dub(arr_cpy, size);
 		stack_a = creat_list(arr, size);
+		if(size == 2)
+			swap(stack_a, "sa\n");
+		else if(size == 3)
+			sort3(&stack_a);
+			
 		// swap(stack_b, "sb\n");
 		// push_b(&stack_a, &stack_b, "pb\n");
 		// push_b(&stack_a, &stack_b, "pb\n");
