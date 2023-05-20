@@ -6,11 +6,31 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:13:30 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/09 17:17:49 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:55:29 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// t_list	*ft_lstnew(int *data)
+// {
+// 	t_list	*new;
+
+// 	new = malloc(sizeof(t_list));
+// 	if (!new)
+// 		return (NULL);
+// 	new->data = data;
+// 	new->next = NULL;
+// 	return (new);
+// }
+
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
+}
 
 size_t	ft_strlen(const char *str)
 {
