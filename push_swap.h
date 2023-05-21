@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:09:12 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/20 14:11:07 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/21 11:33:06 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	rotate_b(t_list **stack_b, char *s);
 void	reverse_rotate_a(t_list **stack_a, char *s);
 void	reverse_rotate_b(t_list **stack_b, char *s);
 void	sort3(t_list **stack_a);
-int	find_min(t_list *stack_a);
+void	sort4(t_list **stack_a, t_list **stack_b);
+void	sort5(t_list **stack_a, t_list **stack_b);
+int	    find_min(t_list *stack_a);
 
 #endif

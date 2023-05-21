@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:09:00 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/20 14:18:41 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/21 12:22:51 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -225,31 +225,27 @@ char *get_num(int ac, char **av)
 	return(str);
 }
 
-int	*check_dub(int *arr, int size)
+void	check_dub(int *arr, int size) 
 {
-	int i = 0;
-    int j = 0; 
-	int tmp = 0;
+    int i; 
+	int j;
 
+	i = 0;
     while (i < size - 1) 
 	{
-        j = 0;
-        while (j < size - 1 - i) 
+        j = i + 1;
+        while (j < size) 
 		{
-            if (arr[j] > arr[j + 1])
+            if (arr[i] == arr[j])
 			{
-                tmp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = tmp;
+                ft_puterror("Error: Duplicate number found!\n");
             }
-			else if(arr[j] == arr[j + 1])
-				ft_puterror("Error: dublicate number found!\n");
             j++;
         }
         i++;
     }
-    return (arr);
 }
+
 
 int main(int ac, char **av)
 {
@@ -261,7 +257,6 @@ int main(int ac, char **av)
 	char *str;
 	char **s;
 	int *arr;
-	int *arr_cpy;
     if(ac < 2)
         ft_puterror("Error: in args!\n");	
     else
@@ -275,37 +270,21 @@ int main(int ac, char **av)
 		arr = malloc(sizeof(int) * (size));
 		if(!arr)
 			return(free(arr), 0);
-		arr_cpy = malloc(sizeof(int) * (size));
-		if(!arr)
-			return(free(arr), 0);
 		while(s[i])
 		{
 			arr[i] = check_num(s[i]);
 			i++;
 		}
-		i = 0;
-		while(i < size)
-		{
-			arr_cpy[i] = arr[i];
-			i++;
-		}
-		check_dub(arr_cpy, size);
+		check_dub(arr, size);
 		stack_a = creat_list(arr, size);
 		if(size == 2)
 			swap(stack_a, "sa\n");
 		else if(size == 3)
 			sort3(&stack_a);
-			
-		// swap(stack_b, "sb\n");
-		// push_b(&stack_a, &stack_b, "pb\n");
-		// push_b(&stack_a, &stack_b, "pb\n");
-		// push_b(&stack_a, &stack_b, "pb\n");
-		// push_b(&stack_a, &stack_b, "pb\n");
-		// push_b(&stack_a, &stack_b, "pb\n");
-		// rotate_a(&stack_a, "ra\n");
-		// rotate_b(&stack_b, "rb\n");
-		// reverse_rotate_a(&stack_a, "rra\n");
-		// reverse_rotate_b(&stack_b, "rrb\n");
+		else if(size == 4)
+			sort4(&stack_a, &stack_b);
+		else if(size == 5)
+			sort5(&stack_a, &stack_b);
 		while(stack_a)
 		{
 			printf("a => %d\n", stack_a->data);
