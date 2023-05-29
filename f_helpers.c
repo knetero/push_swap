@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:24:29 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/26 17:23:53 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/29 11:21:04 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,10 @@ int	get_mid(t_list **stack_a)
 	int	mid_value;
 
 	mid_value = (ft_lstsize(*stack_a) / 2);
-	if ((ft_lstsize(*stack_a) % 2) == 1)
-		mid_value++;
 	return (mid_value);
 }
 
-int get_max(t_list **stack_a)
+int	get_max(t_list **stack_a)
 {
 	t_list	*tmp;
 	int		max_value;
@@ -38,7 +36,7 @@ int get_max(t_list **stack_a)
 	return (max_value);
 }
 
-int	get_index(int index, t_list **stack_a)
+int	get_position(int index, t_list **stack_a)
 {
 	t_list	*tmp;
 	int		j;
@@ -87,10 +85,26 @@ void	index_list(int *arr, int size, t_list **stack_a)
 		while (size != 0)
 		{
 			if (arr[i] == tmp->data)
+			{
 				tmp->index = i;
+			}
 			i++;
 			size--;
 		}
 		tmp = tmp->next;
 	}
+	// while (tmp)
+	// {
+	// 	i = 0;
+	// 	while (i < ft_lstsize(*stack_a))
+	// 	{
+	// 		if (arr[i] == tmp->data)
+	// 		{
+	// 			tmp->index = i;
+	// 			break ;
+	// 		}
+	// 		i++;
+	// 	}
+	// 	tmp = tmp->next;
+	// }
 }

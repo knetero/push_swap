@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:44:53 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/26 15:45:50 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/28 23:29:17 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	reverse_rotate_b(t_list **stack_b, char *s)
 	t_list	*tmp2;
 	t_list	*tmp3;
 
-	if (!*stack_b)
+	if (!*stack_b || !(*stack_b)->next)
 		return ;
 	tmp = *stack_b;
 	tmp2 = *stack_b;
-	while (tmp2->next->next != NULL)
+	while (tmp2->next->next)
 	{
 		tmp2 = tmp2->next;
 	}
@@ -59,7 +59,7 @@ void	rotate_b(t_list **stack_b, char *s)
 	t_list	*tmp;
 	t_list	*tmp2;
 
-	if (!*stack_b)
+	if (!*stack_b || !(*stack_b)->next)
 		return ;
 	tmp = *stack_b;
 	*stack_b = (*stack_b)->next;
@@ -91,3 +91,4 @@ void	rotate_a(t_list **stack_a, char *s)
 	tmp->next = NULL;
 	ft_putstr_fd(s, 1);
 }
+

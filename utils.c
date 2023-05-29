@@ -6,11 +6,63 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:13:30 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/26 15:50:07 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/29 01:58:47 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_list	*ft_lstlast(t_list	*lst)
+{
+	if (lst)
+	{
+		while (lst->next != NULL)
+			lst = lst->next;
+		return (lst);
+	}
+	return (NULL);
+}
+
+void	ft_lstadd_back(t_list **alst, t_list *new)
+{
+	t_list	*p;
+
+	if (alst)
+	{
+		if ((*alst) == NULL)
+			(*alst) = new;
+		else
+		{
+			p = *alst;
+			while (p->next != NULL)
+				p = p->next;
+			p->next = new;
+		}
+	}
+}
+
+void	ft_lstadd_front(t_list **alst, t_list *new)
+{
+	if (new)
+	{
+		new->next = *alst;
+		*alst = new;
+		new = NULL;
+	}
+}
+
+t_list	*ft_lstnew(int content, int j)
+{
+	t_list	*element;
+
+	element = (t_list *)malloc(sizeof(t_list));
+	if (!element)
+		return (NULL);
+	element->data = content;
+	element->index = j;
+	element->next = NULL;
+	return (element);
+}
 
 static int	w_count(char *s, char c)
 {
