@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 13:35:36 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/30 19:53:34 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/30 21:33:03 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void	fill_stack_b(t_list **stack_a, t_list **stack_b)
 		j = 25;
 	fill_stack_b2(stack_a, stack_b, i, j);
 }
-
 
 void	big_sort(t_list **stack_a, t_list **stack_b)
 {

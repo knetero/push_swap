@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 10:54:43 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/30 20:01:46 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/30 21:32:55 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,3 @@ t_list	*ft_lstnew(int content, int j)
 	element->next = NULL;
 	return (element);
 }
-
