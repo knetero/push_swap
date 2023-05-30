@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:46:49 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/29 19:39:56 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/30 14:34:53 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,6 @@ t_list	*creat_node(t_list *new_node)
 		return (0);
 	}
 	return (new_node);
-}
-
-int	ft_lstsize(t_list *lst)
-{
-	int	count;
-
-	count = 0;
-	while (lst)
-	{
-		lst = lst->next;
-		count++;
-	}
-	return (count);
 }
 
 char	*ft_strdup(const char *s1)
@@ -85,6 +72,8 @@ void	parse_first_arg(char **av, int i, int j)
 	{
 		if (!ft_isdigit(av[1][j]))
 		{
+			if (!ft_isdigit(av[1][j + 1]))
+				ft_puterror("Error:the arg is not digit!\n");
 			if ((av[1][j] == '-' || av[1][j] == '+'))
 				return ;
 			ft_puterror("Error:the arg is not digit!\n");

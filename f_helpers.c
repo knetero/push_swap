@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:24:29 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/29 11:21:04 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/30 14:02:11 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,18 +93,4 @@ void	index_list(int *arr, int size, t_list **stack_a)
 		}
 		tmp = tmp->next;
 	}
-	// while (tmp)
-	// {
-	// 	i = 0;
-	// 	while (i < ft_lstsize(*stack_a))
-	// 	{
-	// 		if (arr[i] == tmp->data)
-	// 		{
-	// 			tmp->index = i;
-	// 			break ;
-	// 		}
-	// 		i++;
-	// 	}
-	// 	tmp = tmp->next;
-	// }
 }

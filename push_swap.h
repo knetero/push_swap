@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:09:12 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/29 15:45:00 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:06:14 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,16 @@ typedef struct t_list
 	struct t_list	*next;
 }t_list;
 
+typedef struct t_v
+{
+	char	**s;
+	char	*str;
+	int		*arr;
+	int		*arr_cpy;
+	int		i;
+	int		size;
+}t_v;
+
 size_t	ft_strlen(const char *str);
 t_list	*creat_node(t_list *new_node);
 t_list	*ft_lstnew(int content, int j);
@@ -35,6 +45,8 @@ void	ft_putstr_fd(char *s, int fd);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s1);
 char	**ft_split(char const *s, char c);
+int		*arr_init(t_v *v);
+int		*arr_cpy_init(t_v *v);
 int		*check_dub(int *arr, int size);
 int		check_num(char *str);
 int		*swap_arr(int *arr, int j, int tmp);
@@ -61,11 +73,11 @@ void	sort3_case0(t_list **stack_a);
 void	sort3_case1(t_list **stack_a);
 void	sort3_case2(t_list **stack_a);
 void	sort4(t_list **stack_a, t_list **stack_b);
+void	sort4_helper(t_list **stack_a, t_list **stack_b, int pos, int j);
 void	sort5(t_list **stack_a, t_list **stack_b);
 void	big_sort(t_list **stack_a, t_list **stack_b);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **alst, t_list *new);
 void	parse_first_arg(char **av, int i, int j);
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:09:00 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/29 19:41:33 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:07:29 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,66 +102,31 @@ char	*get_num(int ac, char **av)
 	return (str);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
+	t_v		v;
 	t_list	*stack_a;
 	t_list	*stack_b;
-	char	**s;
-	char	*str;
-	int		*arr;
-	int		*arr_cpy;
-	int		i;
-	int		size;
 
 	stack_b = NULL;
-	// system("leaks push_swap > leaks_result_temp; cat leaks_result_temp | grep leaked && rm -rf leaks_result_temp");
-
-	size = 0;
-	i = 0;
+	v.size = 0;
+	v.i = 0;
 	if (ac < 2)
 		exit(0);
 	else
 	{
-		str = get_num(ac, av);
-		s = ft_split(str, ' ');
-		while (s[size])
-			size++;
-		if (size == 1)
-			exit(0);
-		arr = malloc(sizeof(int) * (size));
-		arr_cpy = malloc(sizeof(int) * (size));
-		if (!arr)
-			return (free(arr), 0);
-		while (s[i])
-		{
-			arr[i] = check_num(s[i]);
-			i++;
-		}
-		i = 0;
-		while (s[i])
-		{
-			arr_cpy[i] = arr[i];
-			i++;
-		}
-		check_dub(arr_cpy, i);
-		stack_a = creat_list(arr, size);
-		index_list (arr_cpy, size, &stack_a);
+		v.str = get_num(ac, av);
+		v.s = ft_split(v.str, ' ');
+		while (v.s[v.size])
+			v.size++;
+		v.arr = arr_init(&v);
+		v.i = 0;
+		v.arr_cpy = arr_cpy_init(&v);
+		check_dub(v.arr_cpy, v.size);
+		stack_a = creat_list(v.arr, v.size);
+		index_list (v.arr_cpy, v.size, &stack_a);
 		if (is_stack_sorted(&stack_a))
 			exit(0);
-		sort_stack (&stack_a, &stack_b, i);
-
-		// push_b(&stack_a, &stack_b, "pa\n");
-		// push_b(&stack_a, &stack_b, "pa\n");
-		// while (stack_a)
-		// {
-		// 	printf("a => %d  || index = %d \n", stack_a->data, stack_a->index);
-		// 	stack_a = stack_a->next;
-		// }
-		// printf("\n\n");
-		// while (stack_b)
-		// {
-		// 	printf("b => %d  || index = %d \n", stack_b->data, stack_b->index);
-		// 	stack_b = stack_b->next;
-		// }
+		sort_stack (&stack_a, &stack_b, v.i);
 	}
 }

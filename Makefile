@@ -6,15 +6,18 @@
 #    By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/07 17:03:03 by abazerou          #+#    #+#              #
-#    Updated: 2023/05/27 13:35:47 by abazerou         ###   ########.fr        #
+#    Updated: 2023/05/30 15:10:31 by abazerou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc -g
 CFLAGS = -Wall -Werror -Wextra
 NAME = push_swap
-SRCS = push_swap.c utils.c sort.c instructions.c f_helpers.c parsing.c 2_instructions.c 2_utils.c 3_utils.c 2_sort.c big_sort.c
-
+SRCS = push_swap.c parsing.c parsing2.c\
+				sort1.c sort2.c big_sort.c\
+				f1_instructions.c f2_instructions.c\
+				1_utils.c 2_utils.c 3_utils.c 4_utils.c f_helpers.c\
+		
 red    =   `tput setaf 1`
 green  =   `tput setaf 2`
 yellow =   `tput setaf 3`
