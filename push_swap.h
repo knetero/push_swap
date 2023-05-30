@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:09:12 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/30 15:06:14 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/30 19:56:26 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ typedef struct t_v
 	int		size;
 }t_v;
 
-size_t	ft_strlen(const char *str);
-t_list	*creat_node(t_list *new_node);
+size_t	ft_strlen(char *str);
+t_list	*creat_node(void);
 t_list	*ft_lstnew(int content, int j);
 t_list	*ft_lstlast(t_list	*lst);
 void	ft_puterror(char *s);
 void	ft_putstr_fd(char *s, int fd);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strdup(const char *s1);
 char	**ft_split(char const *s, char c);
 int		*arr_init(t_v *v);

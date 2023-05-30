@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:09:00 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/30 15:07:29 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/30 20:29:51 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ t_list	*creat_list(int *arr, int size)
 	i = 0;
 	while (i < size)
 	{
-		new_node = creat_node(new_node);
+		new_node = creat_node();
 		new_node->data = arr[i++];
 		new_node->next = NULL;
 		if (head == NULL)
@@ -79,7 +79,7 @@ char	*get_num(int ac, char **av)
 	int		i;
 	int		j;
 
-	str = "";
+	str = ft_strdup("");
 	i = 1;
 	j = 0;
 	while (i < ac)
@@ -92,9 +92,9 @@ char	*get_num(int ac, char **av)
 				ft_puterror("Error:the arg is not digit!\n");
 		}
 		str = ft_strjoin(str, av[i]);
-		i++;
 		if (!str)
 			return (NULL);
+		i++;
 		if (i < ac)
 			str = ft_strjoin(str, " ");
 	}
@@ -117,16 +117,30 @@ int	main(int ac, char **av)
 	{
 		v.str = get_num(ac, av);
 		v.s = ft_split(v.str, ' ');
+		if (!v.s)
+			exit(1);
+		free(v.str);
 		while (v.s[v.size])
 			v.size++;
 		v.arr = arr_init(&v);
 		v.i = 0;
 		v.arr_cpy = arr_cpy_init(&v);
+		v.i = 0;
+		while (v.i < v.size)
+		{
+			free(v.s[v.i++]);
+		}
+		free(v.s);
 		check_dub(v.arr_cpy, v.size);
 		stack_a = creat_list(v.arr, v.size);
 		index_list (v.arr_cpy, v.size, &stack_a);
+		free(v.arr);
+		free(v.arr_cpy);
 		if (is_stack_sorted(&stack_a))
+		{
+			free(stack_a);
 			exit(0);
-		sort_stack (&stack_a, &stack_b, v.i);
+		}
+		sort_stack (&stack_a, &stack_b, v.size);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:24:29 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/30 14:02:11 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/30 19:29:46 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	get_max(t_list **stack_a)
 			max_value = tmp->index;
 		tmp = tmp->next;
 	}
+	free(tmp);
 	return (max_value);
 }
 
@@ -50,6 +51,7 @@ int	get_position(int index, t_list **stack_a)
 		j++;
 		tmp = tmp->next;
 	}
+	free(tmp);
 	return (0);
 }
 
@@ -66,6 +68,7 @@ int	get_min(t_list **stack_a)
 			min_value = tmp->index;
 		tmp = tmp->next;
 	}
+	free(tmp);
 	return (min_value);
 }
 
@@ -93,4 +96,5 @@ void	index_list(int *arr, int size, t_list **stack_a)
 		}
 		tmp = tmp->next;
 	}
+	free(tmp);
 }

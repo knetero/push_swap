@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions.c                                     :+:      :+:    :+:   */
+/*   f1_instructions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:20:51 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/30 12:04:48 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/30 19:53:09 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	push_a(t_list **head_b, t_list **stack_a, char *s)
 	tmp_b = *head_b;
 	(*head_b) = (*head_b)->next;
 	ft_lstadd_front(stack_a, ft_lstnew(tmp_b->data, tmp_b->index));
+	free(tmp_b);
 	ft_putstr_fd(s, 1);
 }
 
@@ -62,6 +63,7 @@ void	push_b(t_list **head_a, t_list **stack_b, char *s)
 	(*head_a) = (*head_a)->next;
 	ft_lstadd_front(stack_b, ft_lstnew(tmp_a->data, tmp_a->index));
 	ft_putstr_fd(s, 1);
+	free(tmp_a);
 }
 
 void	swap(t_list **head, char *s)

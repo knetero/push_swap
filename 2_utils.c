@@ -6,14 +6,16 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:46:49 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/30 14:34:53 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/30 19:56:43 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*creat_node(t_list *new_node)
+t_list	*creat_node(void)
 {
+	t_list	*new_node;
+
 	new_node = malloc(sizeof(t_list));
 	if (!new_node)
 	{
