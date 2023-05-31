@@ -1,7 +1,6 @@
 # push_swap
 
 
-The project that will make you sort numbers
 
 **Push_swap** is a project that teaches you about sorting algorithms and how to optimize them.
 
