@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:09:12 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/30 19:56:26 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:11:32 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	rotate_a(t_list **stack_a, char *s);
 void	rotate_b(t_list **stack_b, char *s);
 void	reverse_rotate_a(t_list **stack_a, char *s);
 void	reverse_rotate_b(t_list **stack_b, char *s);
-void	index_list(int *arr, int size, t_list **stack_a);
+void	index_list(int *arr, int size, t_list **stack_a, t_v *v);
 void	sort3(t_list **stack_a);
 void	sort3_case0(t_list **stack_a);
 void	sort3_case1(t_list **stack_a);
@@ -79,5 +79,7 @@ void	big_sort(t_list **stack_a, t_list **stack_b);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **alst, t_list *new);
 void	parse_first_arg(char **av, int i, int j);
+void	ft_freetab(t_v *v);
+int		get_size(t_v *v);
 
 #endif

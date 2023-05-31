@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 14:39:44 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/30 15:08:59 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:33:56 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ int	*arr_init(t_v *v)
 		v->arr[v->i] = check_num(v->s[v->i]);
 		v->i++;
 	}
+	v->i = 0;
 	return (v->arr);
 }

@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:24:29 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/30 19:29:46 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:07:45 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	get_min(t_list **stack_a)
 	return (min_value);
 }
 
-void	index_list(int *arr, int size, t_list **stack_a)
+void	index_list(int *arr, int size, t_list **stack_a, t_v *v)
 {
 	t_list	*tmp;
 	int		i;
@@ -96,5 +96,7 @@ void	index_list(int *arr, int size, t_list **stack_a)
 		}
 		tmp = tmp->next;
 	}
+	free(arr);
+	free(v->arr);
 	free(tmp);
 }

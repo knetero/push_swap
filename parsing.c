@@ -6,11 +6,18 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:41:18 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/29 15:34:41 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:34:45 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	get_size(t_v *v)
+{
+	while (v->s[v->size])
+		v->size++;
+	return (v->size);
+}
 
 int	*swap_arr(int *arr, int j, int tmp)
 {

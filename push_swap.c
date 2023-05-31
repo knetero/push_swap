@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:09:00 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/30 20:29:51 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:32:01 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,30 +117,16 @@ int	main(int ac, char **av)
 	{
 		v.str = get_num(ac, av);
 		v.s = ft_split(v.str, ' ');
-		if (!v.s)
-			exit(1);
 		free(v.str);
-		while (v.s[v.size])
-			v.size++;
+		v.size = get_size(&v);
 		v.arr = arr_init(&v);
-		v.i = 0;
 		v.arr_cpy = arr_cpy_init(&v);
-		v.i = 0;
-		while (v.i < v.size)
-		{
-			free(v.s[v.i++]);
-		}
-		free(v.s);
+		ft_freetab(&v);
 		check_dub(v.arr_cpy, v.size);
 		stack_a = creat_list(v.arr, v.size);
-		index_list (v.arr_cpy, v.size, &stack_a);
-		free(v.arr);
-		free(v.arr_cpy);
+		index_list (v.arr_cpy, v.size, &stack_a, &v);
 		if (is_stack_sorted(&stack_a))
-		{
-			free(stack_a);
 			exit(0);
-		}
 		sort_stack (&stack_a, &stack_b, v.size);
 	}
 }

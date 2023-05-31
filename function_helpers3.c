@@ -6,11 +6,21 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 10:54:43 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/30 21:32:55 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:33:28 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_freetab(t_v *v)
+{
+	v->i = 0;
+	while (v->i < v->size)
+	{
+		free(v->s[v->i++]);
+	}
+	free(v->s);
+}
 
 int	ft_lstsize(t_list *lst)
 {

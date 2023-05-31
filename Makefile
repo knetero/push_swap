@@ -6,17 +6,17 @@
 #    By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/07 17:03:03 by abazerou          #+#    #+#              #
-#    Updated: 2023/05/30 20:18:59 by abazerou         ###   ########.fr        #
+#    Updated: 2023/05/31 17:46:24 by abazerou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc -g
-CFLAGS = -Wall -Werror -Wextra -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra
 NAME = push_swap
 SRCS = push_swap.c parsing.c parsing2.c\
 				sort1.c sort2.c big_sort.c\
-				f1_instructions.c f2_instructions.c\
-				1_utils.c 2_utils.c 3_utils.c 4_utils.c f_helpers.c\
+				first_instructions.c second_instructions.c\
+				split_args.c function_helpers.c function_helpers2.c function_helpers3.c get_positions.c\
 		
 red    =   `tput setaf 1`
 green  =   `tput setaf 2`
