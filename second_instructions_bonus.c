@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   second_instructions.c                              :+:      :+:    :+:   */
+/*   second_instructions_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:44:53 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/01 15:39:20 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/02 12:16:04 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	reverse_rotate_b(t_list **stack_b, char *s)
 	tmp2->next = NULL;
 	(*stack_b) = tmp3;
 	tmp3->next = tmp;
-	ft_putstr_fd(s, 1);
+	ft_putstr_fd_bonus(s, 1);
 }
 
 void	reverse_rotate_a(t_list **stack_a, char *s)
@@ -51,7 +51,7 @@ void	reverse_rotate_a(t_list **stack_a, char *s)
 	tmp2->next = NULL;
 	(*stack_a) = tmp3;
 	tmp3->next = tmp;
-	ft_putstr_fd(s, 1);
+	ft_putstr_fd_bonus(s, 1);
 }
 
 void	rotate_b(t_list **stack_b, char *s)
@@ -70,7 +70,7 @@ void	rotate_b(t_list **stack_b, char *s)
 	}
 	tmp2->next = tmp;
 	tmp->next = NULL;
-	ft_putstr_fd(s, 1);
+	ft_putstr_fd_bonus(s, 1);
 }
 
 void	rotate_a(t_list **stack_a, char *s)
@@ -89,12 +89,12 @@ void	rotate_a(t_list **stack_a, char *s)
 	}
 	tmp2->next = tmp;
 	tmp->next = NULL;
-	ft_putstr_fd(s, 1);
+	ft_putstr_fd_bonus(s, 1);
 }
 
 void	rr(t_list **stack_a, t_list **stack_b)
 {
 	rotate_a(stack_a, NULL);
 	rotate_b(stack_b, NULL);
-	ft_putstr_fd("rr\n", 1);
+	ft_putstr_fd_bonus("rr\n", 1);
 }

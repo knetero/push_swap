@@ -1,43 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   function_helpers2.c                                :+:      :+:    :+:   */
+/*   function_helpers2_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:49:55 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/03 14:02:04 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/03 12:49:17 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_strdup(char *s)
+char	*get_num_bonus(int ac, char **av)
 {
-	char	*p;
+	char	*str;
 	int		i;
+	int		j;
 
-	i = 0;
-	p = (char *)malloc(ft_strlen(s) * sizeof(char) + 1);
-	if (!p)
-		return (NULL);
-	while (s[i])
+	str = ft_strdup("");
+	i = 1;
+	j = 0;
+	while (i < ac)
 	{
-		p[i] = s[i];
+		parse_first_arg_bonus(av, i, j);
+		while (av[i][j] == 32)
+		{
+			j++;
+			if (av[i][j] == '\0')
+				ft_puterror_bonus("Error:the arg is not digit!\n");
+		}
+		str = ft_strjoin(str, av[i]);
+		if (!str)
+			return (NULL);
 		i++;
+		if (i < ac)
+			str = ft_strjoin(str, " ");
 	}
-	p[i] = '\0';
-	return (p);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (*s++)
-		i++;
-	return (i);
+	str[ft_strlen(str)] = '\0';
+	return (str);
 }
 
 int	ft_isdigit(int c)
@@ -48,38 +49,9 @@ int	ft_isdigit(int c)
 		return (0);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
-{
-	char	*str;
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!str)
-		return (NULL);
-	while (s1[i])
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	while (s2[j])
-	{
-		str[i] = s2[j];
-		i++;
-		j++;
-	}
-	str[i] = '\0';
-	free(s1);
-	return (str);
-}
-
 void	ss(t_list **stack_a, t_list **stack_b)
 {
 	swap(stack_a, NULL);
 	swap(stack_b, NULL);
-	ft_putstr_fd("ss\n", 1);
+	ft_putstr_fd_bonus("ss\n", 1);
 }

@@ -1,16 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   function_helpers2.c                                :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 15:49:55 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/03 14:02:04 by abazerou         ###   ########.fr       */
+/*   Created: 2022/12/27 17:28:05 by abazerou          #+#    #+#             */
+/*   Updated: 2023/01/01 00:02:14 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "get_next_line.h"
+
+size_t	ft_strlen(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (*s++)
+		i++;
+	return (i);
+}
 
 char	*ft_strdup(char *s)
 {
@@ -30,35 +40,19 @@ char	*ft_strdup(char *s)
 	return (p);
 }
 
-size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (*s++)
-		i++;
-	return (i);
-}
-
-int	ft_isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
-}
-
 char	*ft_strjoin(char *s1, char *s2)
 {
+	int		i;
+	int		x;
 	char	*str;
-	size_t	i;
-	size_t	j;
 
 	i = 0;
-	j = 0;
-	if (!s1 || !s2)
+	x = 0;
+	if (!s1)
+		s1 = ft_strdup("");
+	if (!s2 || !s1)
 		return (NULL);
-	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	str = malloc((ft_strlen(s1) + ft_strlen(s2) +1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	while (s1[i])
@@ -66,20 +60,23 @@ char	*ft_strjoin(char *s1, char *s2)
 		str[i] = s1[i];
 		i++;
 	}
-	while (s2[j])
-	{
-		str[i] = s2[j];
-		i++;
-		j++;
-	}
+	while (s2[x])
+		str[i++] = s2[x++];
 	str[i] = '\0';
 	free(s1);
 	return (str);
 }
 
-void	ss(t_list **stack_a, t_list **stack_b)
+int	ft_strchr(char *s, int c)
 {
-	swap(stack_a, NULL);
-	swap(stack_b, NULL);
-	ft_putstr_fd("ss\n", 1);
+	int		i;
+
+	i = 0;
+	if (!s)
+		return (0);
+	while (s[i] && s[i] != (char )c)
+		i++;
+	if (s[i] == (char )c)
+		return (1);
+	return (0);
 }
