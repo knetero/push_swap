@@ -6,7 +6,7 @@
 #    By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/07 17:03:03 by abazerou          #+#    #+#              #
-#    Updated: 2023/06/03 12:57:02 by abazerou         ###   ########.fr        #
+#    Updated: 2023/06/03 22:13:36 by abazerou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS = push_swap.c parsing.c parsing2.c\
 
 SRCSB =  checker.c parsing_bonus.c parsing2_bonus.c get_next_line.c get_next_line_utils.c \
 				first_instructions_bonus.c second_instructions_bonus.c\
-				split_args_bonus.c function_helpers_bonus.c function_helpers2_bonus.c function_helpers3_bonus.c indexing_bonus.c\
+				split_args_bonus.c function_helpers_bonus.c function_helpers2_bonus.c function_helpers3_bonus.c list_creation.c\
 
 HEADER = push_swap.h
 
@@ -39,7 +39,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@echo "                                                                                "
-	@echo "$(green)✓ ██░░[SUCCESS:$(green)PUSH_SWAP $(green)IS READY]░░██$(white)"
+	@echo "$(green)✓ SUCCESS: ██░░[$(green)PUSH_SWAP $(green)IS READY]░░██$(white)"
 	@echo "                                                                                "
 	@echo "$(green)██████╗░██╗░░░██╗░██████╗██╗░░██╗░██████╗░██╗░░░░░░░██╗░█████╗░██████╗░ "
 	@echo "$(green)██╔══██╗██║░░░██║██╔════╝██║░░██║██╔════╝░██║░░██╗░░██║██╔══██╗██╔══██╗ "
@@ -55,21 +55,21 @@ bonus: $(NAMEB)
 
 $(NAMEB): $(OBJB) $(HEADER)
 	@$(CC) $(CFLAGS) $(OBJB) -o $(NAMEB)
-	@echo "$(green)✓ [SUCCESS: Bonus is ready]$(white)"
+	@echo "$(green)✓ SUCCESS: ██░░[BONUS IS READY]░░██$(white)"
 
 
 %.o: %.c push_swap.h
-	$(CC) $(CFLAGS) -c $<
+	@$(CC) $(CFLAGS) -c $<
 
 
 clean:
 	@rm -f $(OBJS)
 	@rm -f $(OBJB)
-	@echo " $(red)✗ [OBJ]$(red) push_swap $(red)removed$(white)."
+	@echo " $(red)✗ [OBJ]$(red)$(red) REMOVED$(white)."
 
 fclean: clean
 	@rm -f $(NAME)
 	@rm -f $(NAMEB)
-	@echo " $(red)✗ [OBJ & EXEC]$(green) push_swap $(red)removed$(green)."
+	@echo " $(red)✗ [OBJ & EXEC]$(red) REMOVED."
 
 re: fclean all
