@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:09:00 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/05 20:55:53 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/06 18:06:14 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	is_stack_sorted(t_list **stack_a)
 	t_list	*tmp;
 
 	tmp = *(stack_a);
-	while (tmp->next)
+	while (tmp && tmp->next)
 	{
 		if (tmp->data > tmp->next->data)
 			return (0);
@@ -102,6 +102,7 @@ char	*get_num(int ac, char **av)
 	return (str);
 }
 
+
 int	main(int ac, char **av)
 {
 	t_v		v;
@@ -110,7 +111,6 @@ int	main(int ac, char **av)
 
 	stack_b = NULL;
 	v.size = 0;
-	v.i = 0;
 	if (ac < 2)
 		exit(0);
 	else
@@ -128,5 +128,6 @@ int	main(int ac, char **av)
 		if (is_stack_sorted(&stack_a))
 			exit(0);
 		sort_stack (&stack_a, &stack_b, v.size);
+		ft_free_stack(&stack_a);
 	}
 }

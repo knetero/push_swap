@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:09:12 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/05 20:08:26 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/06 17:49:32 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void	ft_freetab(t_v *v);
 int		get_size(t_v *v);
 char	*get_num(int ac, char **av);
 void	error_empty(char **av, int i);
+void	ft_free_stack(t_list **stack);
 // --------------------BONUS---------------------------
 t_list	*creat_list_bonus(int *arr, int size);
 char	**ft_split_bonus(char const *s, char c);
@@ -110,5 +111,6 @@ void	check_instructions(char *s, t_list **stack_a, t_list **stack_b);
 void	read_lines(t_list **stack_a, t_list **stack_b);
 void	ft_putstr_fd_bonus(char *s, int fd);
 int		ft_strcmp(char *s, char *ins);
+void	ft_free_stack_bonus(t_list **stack);
 
 #endif

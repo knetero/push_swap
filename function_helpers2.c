@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:49:55 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/03 14:02:04 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:16:40 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char	*ft_strjoin(char *s1, char *s2)
 
 void	ss(t_list **stack_a, t_list **stack_b)
 {
-	swap(stack_a, NULL);
-	swap(stack_b, NULL);
+	swap(stack_a, 0);
+	swap(stack_b, 0);
 	ft_putstr_fd("ss\n", 1);
 }

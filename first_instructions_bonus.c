@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:20:51 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/03 14:01:47 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:15:34 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	swap(t_list **head, char *s)
 
 void	rrr(t_list **stack_a, t_list **stack_b)
 {
-	reverse_rotate_a(stack_a, NULL);
-	reverse_rotate_b(stack_b, NULL);
-	ft_putstr_fd_bonus("rr\n", 1);
+	reverse_rotate_a(stack_a, 0);
+	reverse_rotate_b(stack_b, 0);
 }

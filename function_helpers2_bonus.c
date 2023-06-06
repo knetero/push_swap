@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:49:55 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/05 16:10:22 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:16:15 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int	ft_isdigit(int c)
 
 void	ss(t_list **stack_a, t_list **stack_b)
 {
-	swap(stack_a, NULL);
-	swap(stack_b, NULL);
-	ft_putstr_fd_bonus("ss\n", 1);
+	swap(stack_a, 0);
+	swap(stack_b, 0);
 }

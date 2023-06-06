@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 14:33:02 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/05 12:00:13 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/06 17:36:30 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	read_lines(t_list **stack_a, t_list **stack_b)
 		check_instructions(s, stack_a, stack_b);
 		free(s);
 	}
-	if (is_stack_sorted_bonus(stack_a))
+	if (is_stack_sorted_bonus(stack_a) && ft_lstsize(*stack_b) == 0)
 		ft_putstr_fd_bonus("OK\n", 1);
 	else
 		ft_puterror_bonus("KO\n");
@@ -81,7 +81,7 @@ int	is_stack_sorted_bonus(t_list **stack_a)
 	t_list	*tmp;
 
 	tmp = *(stack_a);
-	while (tmp->next)
+	while (tmp && tmp->next)
 	{
 		if (tmp->data > tmp->next->data)
 			return (0);
@@ -114,5 +114,6 @@ int	main(int ac, char **av)
 		stack_a = creat_list_bonus(v.arr, v.size);
 		index_list_bonus(v.arr_cpy, v.size, &stack_a, &v);
 		read_lines(&stack_a, &stack_b);
+		ft_free_stack_bonus(&stack_a);
 	}
 }

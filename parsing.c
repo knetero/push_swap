@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:41:18 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/05 20:00:41 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/06 18:06:31 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	get_size(t_v *v)
 {
+	v->i = 0;
 	while (v->s[v->size])
 		v->size++;
 	return (v->size);
