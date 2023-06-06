@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:09:00 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/03 18:30:29 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/05 20:55:53 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	*get_num(int ac, char **av)
 	j = 0;
 	while (i < ac)
 	{
-		parse_first_arg(av, i, j);
+		error_empty(av, i);
 		while (av[i][j] == 32)
 		{
 			j++;

@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:46:49 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/01 18:23:22 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/05 20:57:25 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,21 +45,30 @@ void	ft_putstr_fd(char *s, int fd)
 	}
 }
 
-void	parse_first_arg(char **av, int i, int j)
+void	error_empty(char **av, int i)
 {
 	if (ft_strlen(av[i]) == 0)
-		ft_puterror("Error!\n");
-	while (av[1][j])
+		ft_puterror("Error:the arg is not digit!\n");
+}
+
+void	sort5_helper(t_list **stack_a, t_list **stack_b, int pos, int j)
+{
+	if (pos == 1)
 	{
-		if (!ft_isdigit(av[1][j]))
-		{
-			if (!ft_isdigit(av[1][j + 1]))
-				ft_puterror("Error:the arg is not digit!\n");
-			if ((av[1][j] == '-' || av[1][j] == '+'))
-				return ;
-			ft_puterror("Error:the arg is not digit!\n");
-		}
-		j++;
+		push_b(stack_a, stack_b, "pb\n");
 	}
-	j = 0;
+	else if (pos > j)
+	{
+		while (ft_lstsize((*stack_a)) >= pos)
+		{
+			reverse_rotate_a(stack_a, "rra\n");
+			pos++;
+		}
+		push_b(stack_a, stack_b, "pb\n");
+	}
+	else
+	{
+		swap(stack_a, "sa\n");
+		push_b(stack_a, stack_b, "pb\n");
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:09:12 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/03 14:21:20 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/05 20:08:26 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,14 +79,16 @@ void	sort3_case1(t_list **stack_a);
 void	sort3_case2(t_list **stack_a);
 void	sort4(t_list **stack_a, t_list **stack_b);
 void	sort4_helper(t_list **stack_a, t_list **stack_b, int pos, int j);
+void	sort5_helper(t_list **stack_a, t_list **stack_b, int pos, int j);
 void	sort5(t_list **stack_a, t_list **stack_b);
 void	big_sort(t_list **stack_a, t_list **stack_b);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **alst, t_list *new);
-void	parse_first_arg(char **av, int i, int j);
+void	parse_first_arg(char *str);
 void	ft_freetab(t_v *v);
 int		get_size(t_v *v);
 char	*get_num(int ac, char **av);
+void	error_empty(char **av, int i);
 // --------------------BONUS---------------------------
 t_list	*creat_list_bonus(int *arr, int size);
 char	**ft_split_bonus(char const *s, char c);

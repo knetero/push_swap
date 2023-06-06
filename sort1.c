@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort1.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 12:09:12 by abazerou          #+#    #+#             */
-/*   Updated: 2023/05/30 13:55:08 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/05 22:37:59 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 void	sort5(t_list **stack_a, t_list **stack_b)
 {
-	push_b(&(*stack_a), &(*stack_b), "pb\n");
+	int		pos;
+	int		j;
+
+	pos = get_position(get_min(stack_a), stack_a);
+	j = ft_lstsize((*stack_a)) / 2;
+	sort5_helper(stack_a, stack_b, pos, j);
 	sort4(stack_a, stack_b);
 	push_a(stack_b, stack_a, "pa\n");
-	sort4(stack_a, stack_b);
 }
 
 void	sort4(t_list **stack_a, t_list **stack_b)

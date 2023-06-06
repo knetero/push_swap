@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:49:55 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/03 12:49:17 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/05 16:10:22 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ char	*get_num_bonus(int ac, char **av)
 	j = 0;
 	while (i < ac)
 	{
-		parse_first_arg_bonus(av, i, j);
 		while (av[i][j] == 32)
 		{
 			j++;

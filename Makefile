@@ -6,11 +6,11 @@
 #    By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/07 17:03:03 by abazerou          #+#    #+#              #
-#    Updated: 2023/06/03 22:13:36 by abazerou         ###   ########.fr        #
+#    Updated: 2023/06/05 22:21:26 by abazerou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc -g
+CC = cc 
 CFLAGS = -Wall -Werror -Wextra
 NAME = push_swap
 NAMEB = checker

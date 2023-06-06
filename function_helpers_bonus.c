@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:46:49 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/02 12:17:39 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/05 20:56:27 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,23 +43,4 @@ void	ft_putstr_fd_bonus(char *s, int fd)
 		write(fd, &s[i], 1);
 		i++;
 	}
-}
-
-void	parse_first_arg_bonus(char **av, int i, int j)
-{
-	if (ft_strlen(av[i]) == 0)
-		ft_puterror_bonus("Error!\n");
-	while (av[1][j])
-	{
-		if (!ft_isdigit(av[1][j]))
-		{
-			if (!ft_isdigit(av[1][j + 1]))
-				ft_puterror_bonus("Error:the arg is not digit!\n");
-			if ((av[1][j] == '-' || av[1][j] == '+'))
-				return ;
-			ft_puterror_bonus("Error:the arg is not digit!\n");
-		}
-		j++;
-	}
-	j = 0;
 }
