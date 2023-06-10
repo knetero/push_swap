@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:09:00 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/06 18:06:14 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/10 11:38:14 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,6 @@ char	*get_num(int ac, char **av)
 	str[ft_strlen(str)] = '\0';
 	return (str);
 }
-
 
 int	main(int ac, char **av)
 {
