@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:44:53 by abazerou          #+#    #+#             */
-/*   Updated: 2023/06/06 16:14:37 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/06/10 11:59:58 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	reverse_rotate_a(t_list **stack_a, char *s)
 	t_list	*tmp2;
 	t_list	*tmp3;
 
-	if (!*stack_a)
+	if (!*stack_a || ft_lstsize(*stack_a) < 2)
 		return ;
 	tmp = *stack_a;
 	tmp2 = *stack_a;
@@ -78,7 +78,7 @@ void	rotate_a(t_list **stack_a, char *s)
 	t_list	*tmp;
 	t_list	*tmp2;
 
-	if (!*stack_a)
+	if (!*stack_a || ft_lstsize(*stack_a) < 2)
 		return ;
 	tmp = *stack_a;
 	*stack_a = (*stack_a)->next;
